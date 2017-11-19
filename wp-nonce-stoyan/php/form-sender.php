@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php';
 $filename = __DIR__ . '/messages/message_'.$_POST['nonce'].'.xml';
 // Checkes if a file with the same name exist. 
 if (file_exists($filename)) {
-	print 'You have already send us contact us form. Thanks!';	
+	print 'You have already submitted this form. Thanks!';	
 }
 else{
 // Checkes is the Nonce Security Code is Valid.
@@ -20,8 +20,9 @@ else{
 		$name = $_POST["name"];
 		$email = $_POST["email"];
 		$message = $_POST["message"];
+		$date = $_POST["date"];
 		$file = fopen( __DIR__ . '/messages/message_' .$_POST['nonce'].'.xml', 'w'); 
-		$content = '<?xml version="1.0" encoding="UTF-8"?><form><name>'.$name.'</name>'  . '<email>' .$email.'</email>' . '<message>' .$message. '</message></form>';
+		$content = '<?xml version="1.0" encoding="UTF-8"?><form><name>' .$name. '</name><email>' .$email.'</email><message>' .$message. '</message><date>' .$date. '</date></form>';
 		fwrite($file , $content); 
 		fclose($file ); 
 		

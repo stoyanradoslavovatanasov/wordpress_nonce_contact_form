@@ -1,3 +1,6 @@
+<?php
+// This is the template page for our form.
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,13 +9,10 @@
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-	
 <?php 
 wp_head();
-get_header( $name );
-
+	get_header( $name );
 ?>
-
 </head>
 <body>
 <div class="site-content-contain">
@@ -21,7 +21,7 @@ get_header( $name );
 <div id="primary" class="content-area">
 <main id="main" class="site-main" role="main">
 <div class="row">
-<iframe src="/wp-content/plugins/wp-nonce-stoyan/form.php" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" ></iframe>
+<iframe src="/wp-content/plugins/wp-nonce-stoyan/form.php" name="targetframe" allowTransparency="false" scrolling="no" frameborder="0" ></iframe>
 </div>
 </main>
 </div>

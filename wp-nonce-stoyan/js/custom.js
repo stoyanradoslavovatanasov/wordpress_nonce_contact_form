@@ -20,12 +20,13 @@ function submitForm(){
     var name = $("#name").val();
     var email = $("#email").val();
     var message = $("#message").val();
+	var date = $("#date").val();
     var nonce = $("#nonce").val(); // Get nonce values from the form
 
     $.ajax({
         type: "POST",
         url: "php/form-sender.php",
-        data: "name=" + name + "&email=" + email + "&message=" + message+ "&nonce=" + nonce,
+        data: "name=" + name + "&email=" + email + "&message=" + message  + "&date=" + date + "&nonce=" + nonce,
         success : function(text){
             if (text == "Your Nonce ID did not verify."){
 
